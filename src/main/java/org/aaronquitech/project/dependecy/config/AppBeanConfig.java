@@ -1,9 +1,9 @@
 package org.aaronquitech.project.dependecy.config;
 
-import org.aaronquitech.project.dependecy.impl.MarvelCharacterImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Clase de configuracion de Beans
@@ -14,10 +14,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "org.aaronquitech.project.dependecy")
 public class AppBeanConfig {
-
-    /** Bean personajes marvel. */
+        /**
+     * Bean RestTemplate Http
+     *
+     * @return {@link RestTemplate} Bean
+     */
     @Bean
-    public MarvelCharacterImpl characterBean() {
-        return new MarvelCharacterImpl();
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

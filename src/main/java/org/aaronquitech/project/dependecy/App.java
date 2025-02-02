@@ -2,12 +2,10 @@ package org.aaronquitech.project.dependecy;
 
 import org.aaronquitech.project.dependecy.config.AppBeanConfig;
 import org.aaronquitech.project.dependecy.service.MarvelCharacterService;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * Clase principal de la dependencia.
+ * Clase principal de main.
  *
  * @author Aaron Quinonez
  * @since 31/01/2025
@@ -18,8 +16,10 @@ public class App
     public static void main( String[] args )
     {
         /** Contexto de Spring. */
-        //AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppBeanConfig.class);
-        /** Cierra contexto. */
-        //context.close();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppBeanConfig.class);
+        /** Obtiene el bean de la implementación. */
+        MarvelCharacterService servicio = context.getBean(MarvelCharacterService.class);
+        /** Cierra el contexto. */
+        context.close();
     }
 }
