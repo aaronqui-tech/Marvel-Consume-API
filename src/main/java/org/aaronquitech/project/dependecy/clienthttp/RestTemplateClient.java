@@ -3,6 +3,7 @@ package org.aaronquitech.project.dependecy.clienthttp;
 import org.aaronquitech.project.dependecy.model.MarvelResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -26,7 +27,7 @@ public class RestTemplateClient {
     public MarvelResponse getCharacters(String url) {
         try {
             return restTemplate.getForObject(url, MarvelResponse.class);
-        } catch (Exception e) {
+        } catch (RestClientException e) {
             throw new RuntimeException(e);
         }
     }
@@ -39,7 +40,7 @@ public class RestTemplateClient {
     public MarvelResponse getCharactersId(String url) {
         try {
             return restTemplate.getForObject(url, MarvelResponse.class);
-        } catch (Exception e) {
+        } catch (RestClientException e) {
             throw new RuntimeException(e);
         }
     }

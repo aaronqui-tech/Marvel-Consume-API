@@ -1,7 +1,7 @@
 package org.aaronquitech.project.dependecy;
 
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -11,8 +11,8 @@ public class AppTest {
     /**
      * Rigorous Test :-)
      */
-    //@Test
+    @Test
     public void testApp() {
-        //assertTrue(true);
+        assertTrue(true);
     }
 }
